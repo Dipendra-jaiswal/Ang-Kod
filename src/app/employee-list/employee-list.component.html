@@ -1,0 +1,43 @@
+<table border="1">
+    <thead>
+    <tr>
+        <td>Code</td>
+        <td>Name</td>
+        <td>gender</td>
+        <td>Salary</td>
+        <td>Date</td>
+        <td>Index</td>
+        <td>First</td>
+        <td>Last</td>
+        <td>Odd</td>
+        <td>Even</td>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let employee of employees;trackBy:trackByEmpCode; let i=index;let isFirst= first; 
+            let islast = last;let isodd= odd;let iseven = even;">
+        <td>{{employee.code}}</td>
+        <td>{{employee.name | uppercase}}</td>
+        <td>{{employee.gender | lowercase}}</td>
+        <td>{{employee.Salary | currency: "INR":true}}</td>
+        <td>{{todate | date: 'shortDate'}}</td>
+        <td>{{i}}</td>
+        <td>{{isFirst}}</td>
+        <td>{{islast}}</td>
+        <td>{{isodd}}</td>
+        <td>{{iseven}}</td>
+    </tr>
+    <tr *ngIf="!employees || employees.length == 0">
+       <td colspan="5" style="color: red;">No Employees to display</td>    
+    </tr>
+</tbody>
+</table>
+<br />
+<button (click)="GetEmployees()">Refresh Employee</button>
+<div>
+    <h1>Json Pipe</h1>
+    <b>{{jsonval | json}}</b>
+
+    <h1>Custom Pipe</h1>
+    <b>{{customVal | mathCal}}</b>
+</div>

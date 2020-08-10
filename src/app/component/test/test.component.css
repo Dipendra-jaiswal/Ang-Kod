@@ -1,0 +1,16 @@
+div {
+    background-color:green;
+}
+
+
+.boldClass{
+font-weight: bold;
+}
+
+.italicsClass{
+    font-style: italic;
+}
+
+.colorClass{
+    color:red;
+}

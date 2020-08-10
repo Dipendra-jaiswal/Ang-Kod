@@ -1,0 +1,57 @@
+<p>test component works!</p>
+<table border="1">
+    <tr>
+        <th>Binding Type</th>
+        <th>Binding Example</th>
+    </tr>
+    <tr>
+        <td>interpolation</td>
+        <td><img width="25" alt="Angular Logo" src="{{imagePath}}"></td>
+    </tr>
+    <tr>
+        <td>Property Binding</td>
+        <td><img width="25" alt="Angular Logo" [src]="imagePath"></td>
+    </tr>
+    <tr>
+        <td>Interpolation vs Property Binding</td>
+        <td><button disabled="{{isDisable}}">Click Me</button></td>
+    </tr>
+    <tr>
+        <td>Canonical Binding</td>
+        <td><img width="25" alt="Angular Logo" bind-src="imagePath"></td>
+    </tr>
+    <tr>
+        <td attr.colspan="{{colsapn}}">Attribute Binding</td>        
+    </tr>
+    <tr>
+        <td>Class Binding</td>
+        <td><button class="colorClass" [class]="classesToApply">My button</button>
+            <button class="colorClass italicsClass boldClass" [class.boldClass] = "!applyBoldClass">My button</button>
+            <button class="colorClass" [ngClass] = "addClasses()">My button</button>
+        </td>
+    </tr>
+    <tr>
+        <td>Style Binding</td>
+        <td><button style="color:red" [style.fontWeight]="isBold ? 'bold' : 'normal'" >Style button</button>
+            <button class="colorClass" [style.font-size.px] = "fontSize">Style button</button>
+            <button class="colorClass" [ngStyle] = "addStyles()">Style button</button>
+        </td>
+    </tr>
+    <tr>
+        <td>Event Binding</td>
+        <td><button class="colorClass" (click)="addEvent();">My Click</button>
+       </td>
+    </tr>
+    <tr>
+        <td>Two way binding(Manual)</td>
+        <td><input id="txt" name="test" value="{{teststr}}" [value]='teststr' 
+            (input)='teststr=$event.target.value'><label>{{teststr}}</label>
+       </td>
+    </tr>
+    <tr>
+        <td>Two way binding(With ngmodel help)</td>
+        <td><input id="txt" [(ngModel)]="teststrauto" ><label>{{teststrauto}}</label>
+       </td>
+    </tr>
+</table>
+
