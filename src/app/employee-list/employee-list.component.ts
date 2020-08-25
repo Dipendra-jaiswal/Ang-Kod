@@ -14,7 +14,7 @@ export class EmployeeListComponent {
   this.employees = [
    {code: "e101",name: "Ram", gender: "Male",Salary: 1000},
    {code: "e102",name: "Shyam", gender: "Male",Salary: 2000},
-   {code: "e103",name: "Sita", gender: "feMale",Salary: 3000},
+   {code: "e103",name: "Sita", gender: "FeMale",Salary: 3000},
    {code: "e104",name: "Ghanshyam", gender: "Male",Salary: 4000}
   ];
 }
@@ -23,7 +23,7 @@ export class EmployeeListComponent {
     this.employees = [
       {code: "e101",name: "Ram", gender: "Male",Salary: 1000},
       {code: "e102",name: "Shyam", gender: "Male",Salary: 2000},
-      {code: "e103",name: "Sita", gender: "feMale",Salary: 3000},
+      {code: "e103",name: "Sita", gender: "FeMale",Salary: 3000},
       {code: "e104",name: "Ghanshyam", gender: "Male",Salary: 4000},
       {code: "e105",name: "Dhyam", gender: "Male",Salary: 5000}
      ];
@@ -31,6 +31,24 @@ export class EmployeeListComponent {
 
   trackByEmpCode(index: number, employee: any): string{
     return employee.code;
+  }
+
+  getTotalEmployeeCount(): number{
+    return this.employees.length;
+  }
+
+  getTotalMaleEmployeeCount(): number{
+    return this.employees.filter(e => e.gender === "Male").length;
+  }
+
+  getTotalFemaleEmployeeCount(): number{
+    return this.employees.filter(e => e.gender === "FeMale").length;
+  }
+
+  selectedRadioButton: string = 'All';
+
+  onEmployeeCountRadioButtonChange(selectedValue: string): void{
+    this.selectedRadioButton = selectedValue;
   }
   
 }

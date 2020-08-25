@@ -1,4 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
+
+<div>
+  <select class='select-option' required [(ngModel)]='optionSelected' (ngModelChange)='onOptionsSelected($event)'>
+    <option class='option' *ngFor='let option of options' [value]="option">{{option}}</option>
+</select>
+</div>
 <div style="text-align:center">
   <h6>
     Welcome to {{ title }}!
@@ -15,5 +21,6 @@
     <app-first-component></app-first-component>
   </li>
 </ul>
+
 
 <router-outlet></router-outlet>

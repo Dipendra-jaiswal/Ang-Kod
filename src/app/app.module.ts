@@ -9,6 +9,7 @@ import { TestComponent } from './component/test/test.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { MathCalPipe } from './math-cal.pipe';
+import { EmployeeCountComponent } from './employee-list/employee-count.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { MathCalPipe } from './math-cal.pipe';
     TestComponent,
     EmployeeComponent,
     EmployeeListComponent,
-    MathCalPipe
+    MathCalPipe,
+    EmployeeCountComponent
   ],
   imports: [
     BrowserModule,

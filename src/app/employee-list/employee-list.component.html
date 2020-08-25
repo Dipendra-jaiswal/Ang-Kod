@@ -1,3 +1,8 @@
+<app-employee-count [all]="getTotalEmployeeCount()"
+                     [male]="getTotalMaleEmployeeCount()"
+                    [female]="getTotalFemaleEmployeeCount()"
+                    (countRadioButtonSelectionChanged)="onEmployeeCountRadioButtonChange($event)"></app-employee-count>
+
 <table border="1">
     <thead>
     <tr>
@@ -14,8 +19,9 @@
     </tr>
 </thead>
 <tbody>
-    <tr *ngFor="let employee of employees;trackBy:trackByEmpCode; let i=index;let isFirst= first; 
-            let islast = last;let isodd= odd;let iseven = even;">
+    <ng-container *ngFor="let employee of employees;trackBy:trackByEmpCode; let i=index;let isFirst= first; 
+    let islast = last;let isodd= odd;let iseven = even;">
+    <tr *ngIf="selectedRadioButton=='All' || selectedRadioButton == employee.gender">
         <td>{{employee.code}}</td>
         <td>{{employee.name | uppercase}}</td>
         <td>{{employee.gender | lowercase}}</td>
@@ -27,6 +33,7 @@
         <td>{{isodd}}</td>
         <td>{{iseven}}</td>
     </tr>
+</ng-container>
     <tr *ngIf="!employees || employees.length == 0">
        <td colspan="5" style="color: red;">No Employees to display</td>    
     </tr>
@@ -34,10 +41,10 @@
 </table>
 <br />
 <button (click)="GetEmployees()">Refresh Employee</button>
-<div>
+<!--<div>
     <h1>Json Pipe</h1>
     <b>{{jsonval | json}}</b>
 
     <h1>Custom Pipe</h1>
     <b>{{customVal | mathCal}}</b>
-</div>
+</div>-->

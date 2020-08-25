@@ -18,4 +18,11 @@ export class AppComponent {
    constructor(objFirst: FirstComponentComponent) {
     this.sum = objFirst.getSum(12,13);
   }
+
+  options = [1, 2, 3];
+optionSelected:number = 3;
+
+onOptionsSelected(event){
+ console.log(event); //option value will be sent as event
+}
 }
